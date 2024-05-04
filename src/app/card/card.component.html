@@ -1,0 +1,24 @@
+<div class="row col-12 justify-content-center align-items-baseline">
+  @for(product of productArrayData ; track $index ){
+  <div class="col-2 text-center mt-2 mx-3 " style="border: 1px solid black; padding: 10px; border-radius: 5px;">
+
+    <div class="button_fav text-end mt-1" style="padding: 0; margin: 0;">
+      <button style="color: none; text-decoration: none; border: none; background: none;">
+        <i style="opacity: 0.7" class="fa-solid fa-heart"></i>
+      </button>
+    </div>
+    <div class="mt-2">
+      <img [src]="product.images[0]" style="height: 160px; width: 160px;" alt="" />
+      <p class="mt-2">{{product.title}}</p>
+      <p><strong>Price</strong>: {{product.price}}</p>
+      <p><strong>Rate</strong>: {{product.rating}}</p>
+      <p><strong>Brand</strong>: {{product.brand}}</p>
+      <div class="d-flex align-items-baseline justify-content-between">
+        <button (click)="addToCart(product)" class="btn btn" style="color: white; background-color: black;">Add to CART</button>
+        <button (click)="HandleDetailes($index)" class="btn btn-dark">Details</button>
+      </div>
+    </div>
+  </div>
+}
+
+</div>
